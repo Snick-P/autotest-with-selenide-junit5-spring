@@ -3,8 +3,7 @@ package autotest.ui.navisale.test;
 import autotest.ui.navisale.config.SpringConfig;
 import autotest.ui.navisale.steps.BaseSteps;
 import lombok.RequiredArgsConstructor;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
@@ -13,6 +12,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static com.codeborne.selenide.Selenide.open;
 import static io.github.bonigarcia.wdm.WebDriverManager.chromedriver;
 
 @Execution(ExecutionMode.SAME_THREAD)
@@ -29,14 +29,27 @@ public class NavisaleTest extends BaseSteps {
         headless = false;
     }
 
-    @BeforeAll
+    @BeforeEach
     public void init(){setUp();}
 
+    @BeforeEach
+    public void openSite(){open("https://stocks.navisale.ru/");}
+
     @AfterEach
-    public void closeDriver(){closeWebDriver();}
+    public void cleaningUp(){
+        headerSteps.goToBasket();
+        basketSteps.deleteAllItems();
+        closeWebDriver();}
 
-
-
+    @DisplayName("Переходы -> категория - сортировка товара по скидке - добавление в корзину ")
+    @Test
+    void case1 (){
+        widgetSteps.goToMenCategory();
+        defaultCategoryItemsSteps.chooseFirstDiscount();
+        defaultCategoryItemsSteps.getFirstItem();
+        defaultItemSteps.addItemToBasket();
+        headerSteps.goToBasket();
+    }
 
 
 }

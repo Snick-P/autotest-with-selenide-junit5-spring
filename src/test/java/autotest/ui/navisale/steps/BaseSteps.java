@@ -15,7 +15,7 @@ public class BaseSteps extends BasketPage {
     @Autowired
     protected BasketSteps basketSteps;
     @Autowired
-    protected DefaultCategorySteps defaultCategorySteps;
+    protected DefaultCategoryItemsSteps defaultCategoryItemsSteps;
     @Autowired
     protected DefaultItemSteps defaultItemSteps;
     @Autowired

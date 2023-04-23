@@ -15,7 +15,7 @@ public class WidgetSteps {
 
     public void goToMenCategory() {
         widget.getCatalogForm().click();
-        widget.getForMen().hover();
+        widget.getForMen().hover().click();
         sleep(150);
     }
 

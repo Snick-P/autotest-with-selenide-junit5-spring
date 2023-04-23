@@ -7,8 +7,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+
 @Component
-public class DefaultCategorySteps {
+public class DefaultCategoryItemsSteps {
 
     @Autowired
     private DefaultCategoryItemPage defaultCategoryItemPage;
@@ -20,6 +21,11 @@ public class DefaultCategorySteps {
     public void goToPreviousPage() {
         defaultCategoryItemPage.getPreviousPageButton().shouldBe(Condition.visible).click();
     }
+
+    public void getFirstItem(){
+        defaultCategoryItemPage.getItemsCollectionButton().get(0).click();
+    }
+
 
     @DisplayName("Сортировка товаров сначала популярные - категория товаров")
     public void chooseFirstPopular() {

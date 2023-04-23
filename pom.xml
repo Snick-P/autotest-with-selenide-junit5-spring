@@ -13,7 +13,7 @@
         <maven.compiler.source>3.11.0</maven.compiler.source>
         <maven.compiler.target>3.11.0</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <junit.jupiter.version>5.9.0</junit.jupiter.version>
+        <junit.jupiter.version>5.9.2</junit.jupiter.version>
     </properties>
 
     <dependencies>
@@ -21,13 +21,13 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.24</version>
+            <version>1.18.26</version>
         </dependency>
 
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
-            <version>6.12.2</version>
+            <version>6.12.3</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -44,7 +44,7 @@
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-launcher</artifactId>
-            <version>1.9.0-M1</version>
+            <version>1.9.2</version>
         </dependency>
 
         <dependency>
@@ -56,25 +56,25 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>5.3.11</version>
+            <version>6.0.6</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>5.3.23</version>
+            <version>6.0.6</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot</artifactId>
-            <version>2.7.4</version>
+            <version>3.0.4</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-commons</artifactId>
-            <version>2.6.0</version>
+            <version>3.0.3</version>
         </dependency>
 
     </dependencies>

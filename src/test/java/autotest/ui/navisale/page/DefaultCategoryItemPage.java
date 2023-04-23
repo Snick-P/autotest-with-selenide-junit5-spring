@@ -23,6 +23,7 @@ public class DefaultCategoryItemPage {
     SelenideElement firstDiscount = $x("//div[@class='sorting-list']//li[4]");
     SelenideElement firstNew = $x("//div[@class='sorting-list']//li[5]");
 
+
     SelenideElement previousPageButton = $x("//a[contains(text(),'В начало')]");
     SelenideElement nextPageButton = $x("//a[contains(text(),'Далее')]");
     //громоздко, но лучше не придумал
