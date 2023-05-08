@@ -22,6 +22,7 @@ public class DefaultItemPage {
     SelenideElement productBrandButton = $x("//a[@class='link card-product-brand__link link link_default']");
     SelenideElement itemCollection = $x("//div[@class='suggest-carousel__carousel-wrapper carousel__wrapper js-wrapper']/div");
     SelenideElement notification =$x("//div[@class='notifications']");
+    ElementsCollection parameters = $$x("//strong");
 
 
 

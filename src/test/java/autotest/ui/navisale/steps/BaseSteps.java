@@ -2,6 +2,7 @@ package autotest.ui.navisale.steps;
 
 
 import autotest.ui.navisale.page.BasketPage;
+import autotest.ui.navisale.page.DefaultItemPage;
 import autotest.ui.navisale.steps.main.FilterSteps;
 import autotest.ui.navisale.steps.main.FooterSteps;
 import autotest.ui.navisale.steps.main.HeaderSteps;
@@ -28,5 +29,7 @@ public class BaseSteps extends BasketPage {
     protected HeaderSteps headerSteps;
     @Autowired
     protected WidgetSteps widgetSteps;
+    @Autowired
+    protected DefaultItemPage defaultItemPage;
 
 }

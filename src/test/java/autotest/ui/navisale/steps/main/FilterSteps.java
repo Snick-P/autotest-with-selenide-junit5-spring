@@ -1,6 +1,7 @@
 package autotest.ui.navisale.steps.main;
 
 import autotest.ui.navisale.page.DefaultCategoryItemPage;
+import autotest.ui.navisale.page.DefaultItemPage;
 import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.DisplayName;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,9 @@ public class FilterSteps {
 
     @Autowired
     DefaultCategoryItemPage defaultCategoryItemPage;
+
+    @Autowired
+    DefaultItemPage defaultItemPage;
 
     @DisplayName("Фильтр - сортировка по цвету")
     public void chooseColor(String color) {
@@ -36,6 +40,7 @@ public class FilterSteps {
 
 
     }
+
     @DisplayName("Фильтр - сортировка по размеру")
     public void chooseSize(String size) {
         defaultCategoryItemPage.getFilterBySizeButton().click();
@@ -74,5 +79,22 @@ public class FilterSteps {
         }
     }
 
+    public void chooseSupplierCountry(String country) {
+        defaultCategoryItemPage.getFilterBySupplierCountry().click();
+        if (country.equalsIgnoreCase("Германия")) {
+            defaultCategoryItemPage.getFilterByGermanySupplier().click();
+        } else if (country.equalsIgnoreCase("США")) {
+            defaultCategoryItemPage.getFilterByUSASupplier().click();
+        } else if (country.equalsIgnoreCase("Турция")) {
+            defaultCategoryItemPage.getFilterByTurkeySupplier().click();
+        } else {
+            fail("Use Германия, США или Турция supplier country");
+        }
+    }
+
+
+    public void submitFilters() {
+        defaultCategoryItemPage.getSubmitFilterButton().click();
+    }
 
 }
