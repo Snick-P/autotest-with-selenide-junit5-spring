@@ -62,22 +62,9 @@ public class FilterSteps {
     public void chooseBrand(String brand) {
         defaultCategoryItemPage.getFilterByBrandButton().click();
         defaultCategoryItemPage.getFilterByBrandShowAll().click();
-        if (brand.equalsIgnoreCase("Adidas")) {
-            defaultCategoryItemPage.getFilterByBrandCheckbox().findBy(Condition.text("Adidas")).click();
-        } else if (brand.equalsIgnoreCase("Nike")) {
-            defaultCategoryItemPage.getFilterByBrandCheckbox().findBy(Condition.text("Nike")).click();
-        } else if (brand.equalsIgnoreCase("Puma")) {
-            defaultCategoryItemPage.getFilterByBrandCheckbox().findBy(Condition.text("Puma")).click();
-        } else if (brand.equalsIgnoreCase("Lacoste")) {
-            defaultCategoryItemPage.getFilterByBrandCheckbox().findBy(Condition.text("Lacoste")).click();
-        } else if (brand.equalsIgnoreCase("Reebok")) {
-            defaultCategoryItemPage.getFilterByBrandCheckbox().findBy(Condition.text("Reebok")).click();
-        } else if (brand.equalsIgnoreCase("Zara")) {
-            defaultCategoryItemPage.getFilterByBrandCheckbox().findBy(Condition.text("Zara")).click();
-        } else {
-            fail("Use Adidas, Nike, Puma, Lacoste, Reebok, Zara brand");
-        }
+        defaultCategoryItemPage.getFilterByBrandCheckbox().findBy(Condition.text(brand)).click();
     }
+
 
     public void chooseSupplierCountry(String country) {
         defaultCategoryItemPage.getFilterBySupplierCountry().click();

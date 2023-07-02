@@ -13,10 +13,6 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class BasketPage {
 
-   /* Проблемы с определением принадлежности кнопок к товару,
-    кнопкам присваивается id по не коррелируем правилам (не смог установить какую-либо взаимосвязь)
-    */
-
     ElementsCollection deleteAllItem = $$x("//li[@class='item delete']");
     ElementsCollection value = $$x("//option[@value]");
     SelenideElement submitButton = $x("//div[@class='payment']//button[@type='submit']");

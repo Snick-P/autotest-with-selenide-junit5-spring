@@ -13,20 +13,22 @@ public class WidgetSteps {
     @Autowired
     private Widget widget;
 
-    public void goToMenCategory() {
+    public WidgetSteps goToMenCategory() {
         widget.getCatalogForm().click();
         widget.getForMen().hover().click();
         sleep(150);
+        return this;
     }
 
     public void goToMenUnderwear() {
         goToMenCategory();
         widget.getMenUnderwear().click();
-    }
+        }
 
     public void goToMenTrousers() {
         goToMenCategory();
         widget.getMenTrousers().click();
+
     }
 
     public void goToMenJeans() {
@@ -95,10 +97,11 @@ public class WidgetSteps {
     }
 
 
-    public void goToWomanCategory() {
+    public WidgetSteps goToWomanCategory() {
         widget.getCatalogForm().click();
         widget.getForWoman().hover();
         sleep(150);
+        return this;
     }
 
     public void goToWomanUnderwear() {
@@ -216,10 +219,11 @@ public class WidgetSteps {
         widget.getAccessories().click();
     }
 
-    public void goToShoes() {
+    public WidgetSteps goToShoes() {
         widget.getCatalogForm().click();
         widget.getShoes().hover();
         sleep(150);
+        return this;
     }
 
     public void goToShoesForMen() {
@@ -232,10 +236,11 @@ public class WidgetSteps {
         widget.getShoesForWoman().click();
     }
 
-    public void goToBagsAndSuitcase() {
+    public WidgetSteps goToBagsAndSuitcase() {
         widget.getCatalogForm().click();
         widget.getBagsAndSuitcase().hover();
         sleep(150);
+        return this;
     }
 
     public void goToBags() {
@@ -273,10 +278,11 @@ public class WidgetSteps {
         widget.getLaptopBag().click();
     }
 
-    public void goToAccessory() {
+    public WidgetSteps goToAccessory() {
         widget.getCatalogForm().click();
         widget.getAccessories().hover();
         sleep(150);
+        return this;
     }
 
     public void goToWatch() {
@@ -349,10 +355,11 @@ public class WidgetSteps {
         widget.getTopItem().click();
     }
 
-    public void goToZara() {
+    public WidgetSteps goToZara() {
         widget.getCatalogForm().click();
         widget.getZara().hover();
         sleep(150);
+        return this;
     }
 
     public void goToZaraForWoman() {
