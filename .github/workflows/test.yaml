@@ -18,7 +18,7 @@ jobs:
           # Caching maven dependencies
           cache: 'maven'
       # mvn build script
-      - run: mvn clean test
+      - run: mvn test allure:serve
       # скачиваем историю тестов
       - uses: actions/checkout@v2
         if: always()
