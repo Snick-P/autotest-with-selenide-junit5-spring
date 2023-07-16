@@ -24,7 +24,7 @@ import static io.github.bonigarcia.wdm.WebDriverManager.chromedriver;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Execution(ExecutionMode.CONCURRENT)
+@Execution(ExecutionMode.SAME_THREAD)
 @ExtendWith({SpringExtension.class})
 @ContextConfiguration(classes = {SpringConfig.class})
 @RequiredArgsConstructor

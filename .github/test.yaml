@@ -1,0 +1,44 @@
+name: Test
+
+on: workflow_dispatch
+
+jobs:
+  test:
+    #где запускаю
+    runs-on: ubuntu-latest
+    #что делаю
+    steps:
+      # выкачиваю репозиторий
+      - uses: actions/checkout@v3
+      # настраиваю Java
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+          # Caching maven dependencies
+          cache: 'maven'
+      # mvn build script
+      - run: mvn clean test
+      # скачиваем историю тестов
+      - uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+      # генерируем отчёт
+      - uses: simple-elf/allure-report-action@master
+        if: always()
+        id: allure-report
+        with:
+          allure_results: target/allure-results
+          allure_report: allure-report
+          allure_history: allure-history
+          keep_reports: 20
+      # публикуем отчёт
+      - uses: peaceiris/actions-gh-pages@v2
+        if: always()
+        env:
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history
