@@ -39,6 +39,8 @@
 > Для автоматизированной сборки проекта используется <code>Maven</code>.
 >
 > В качестве библиотеки для модульного тестирования используется <code>JUnit 5</code>.
+>
+> Настроен <code>GitHub Workflow</code> для сборки и запуска тестов. [Результат тестирования](https://snick-p.github.io/autotest-with-selenide-junit5-spring/7/)
 
 
 ### :eye_speech_bubble: Главная страница Allure-отчета
